@@ -37,30 +37,19 @@ const ActionPreviewHeader: FunctionComponent<
   <div
     key="previewHeader"
     css={(theme) => ({
+      display: 'flex',
       flex: '0 0 30px',
       padding: '5px 10px',
+      gap: '10px',
       alignItems: 'center',
       borderBottomWidth: '1px',
       borderBottomStyle: 'solid',
+      overflowX: 'hidden',
 
       backgroundColor: theme.HEADER_BACKGROUND_COLOR,
       borderBottomColor: theme.HEADER_BORDER_COLOR,
     })}
   >
-    <div css={{ position: 'relative', display: 'inline-flex', float: 'right' }}>
-      {tabs.map((tab) => (
-        <div
-          onClick={() => onSelectTab(tab.name)}
-          key={tab.name}
-          css={[
-            selectorButtonCss,
-            tab.name === tabName && selectorButtonSelectedCss,
-          ]}
-        >
-          {tab.name}
-        </div>
-      ))}
-    </div>
     <div css={{ padding: '6px 0' }}>
       {inspectedPath.length ? (
         <span css={inspectedPathKeyCss}>
@@ -85,6 +74,20 @@ const ActionPreviewHeader: FunctionComponent<
           </span>
         ),
       )}
+    </div>
+    <div css={{ position: 'relative', display: 'inline-flex', float: 'right' }}>
+      {tabs.map((tab) => (
+        <div
+          onClick={() => onSelectTab(tab.name)}
+          key={tab.name}
+          css={[
+            selectorButtonCss,
+            tab.name === tabName && selectorButtonSelectedCss,
+          ]}
+        >
+          {tab.name}
+        </div>
+      ))}
     </div>
   </div>
 );

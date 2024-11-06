@@ -8,6 +8,7 @@ export const selectorButtonCss: Interpolation<Theme> = (theme) => ({
   borderStyle: 'solid',
   borderWidth: '1px',
   borderLeftWidth: 0,
+  gap: '10px',
 
   '&:first-of-type': {
     borderLeftWidth: '1px',
@@ -32,6 +33,7 @@ export const selectorButtonCss: Interpolation<Theme> = (theme) => ({
 export const selectorButtonSmallCss = css({
   padding: '0px 8px',
   fontSize: '0.8em',
+  gap: '8px',
 });
 
 export const selectorButtonSelectedCss: Interpolation<Theme> = (theme) => ({

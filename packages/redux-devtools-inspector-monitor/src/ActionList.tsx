@@ -149,7 +149,7 @@ export default function ActionList<A extends Action<string>>({
       data-testid="actionList"
       css={[
         (theme) => ({
-          flexBasis: '40%',
+          width: '40%',
           flexShrink: 0,
           overflowX: 'hidden',
           overflowY: 'auto',
@@ -157,12 +157,14 @@ export default function ActionList<A extends Action<string>>({
           borderBottomStyle: 'double',
           display: 'flex',
           flexDirection: 'column',
+          resize: 'horizontal',
+          minWidth: 'fit-content',
+          maxWidth: '90%',
 
           backgroundColor: theme.BACKGROUND_COLOR,
           borderColor: theme.LIST_BORDER_COLOR,
         }),
         isWideLayout && {
-          flexBasis: '40%',
           borderBottom: 'none',
           borderRightWidth: '3px',
           borderRightStyle: 'double',
